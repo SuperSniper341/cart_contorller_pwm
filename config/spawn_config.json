@@ -1,0 +1,58 @@
+{
+    "type": "vehicle.micro.microlino",
+    "id": "hero",
+    "autopilot": false,
+    "constraints": {
+        "max_speed_kmh": 15.0,
+        "max_reverse_speed_kmh": 5.0,
+        "max_steer_angle_deg": 20.0,
+        "target_speed_kmh": 5.0,
+        "turn_radius_m": 6.0,
+        "motor_burst_ms": 50,
+        "turn_delay_ms": 10
+    },
+    "world": {
+        "map": "Town04",
+        "synchronous_mode": true,
+        "fixed_delta_seconds": 0.05,
+        "no_rendering_mode": false
+    },
+    "sensors": [
+        {
+            "type": "sensor.camera.rgb",
+            "id": "rgb",
+            "spawn_point": {"x": 1.2, "y": 0.0, "z": 1.8, "roll": 0.0, "pitch": -5.0, "yaw": 0.0},
+            "attributes": {
+                "image_size_x": 1280,
+                "image_size_y": 720,
+                "fov": 100
+            }
+        },
+        {
+            "type": "sensor.lidar.ray_cast",
+            "id": "lidar",
+            "spawn_point": {"x": 0.0, "y": 0.0, "z": 2.0, "roll": 0.0, "pitch": 0.0, "yaw": 0.0},
+            "attributes": {
+                "upper_fov": 15.0,
+                "lower_fov": -25.0,
+                "channels": 32,
+                "range": 30.0,
+                "points_per_second": 150000,
+                "noise_stddev": 0.02
+            }
+        },
+        {
+            "type": "sensor.other.imu",
+            "id": "imu",
+            "spawn_point": {"x": 0.0, "y": 0.0, "z": 2.0, "roll": 0.0, "pitch": 0.0, "yaw": 0.0},
+            "attributes": {
+                "noise_accel_stddev_x": "0.0",
+                "noise_accel_stddev_y": "0.0",
+                "noise_accel_stddev_z": "0.0",
+                "noise_gyro_stddev_x": "0.001",
+                "noise_gyro_stddev_y": "0.001",
+                "noise_gyro_stddev_z": "0.001"
+            }
+        }
+    ]
+}
