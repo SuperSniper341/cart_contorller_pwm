@@ -54,6 +54,3 @@ The Continuous Cascade PID naturally guarantees a bounded output between `[-1.0,
 2.  **Hardware Dispatch:** During that 75ms "ON-time", `navigator.py` continuously spams the `pulse_right()` command to the hardware bridge.
 3.  **Hardware execution:** Because the bridge inherently wraps every single `pulse_right()` command in an isolated, locked 35ms minimum execution block, spamming it for 75ms ends up generating exactly two continuous 35ms blocks back to back (70ms total). This perfectly emulates a human smoothly turning the wheel and then manually holding it.
 4.  **Hold cycle:** For the remaining 75ms "OFF-time", the PWM explicitly commands the bridge to IDLE, executing the `50` Stop command.
-# cart_contorller_pwm
-# cart_contorller_pwm
-# cart_contorller_pwm
